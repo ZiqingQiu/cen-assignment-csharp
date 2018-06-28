@@ -1,0 +1,75 @@
+﻿<Window x:Class="WpfInvoices.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfInvoices"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <TabControl>
+        <TabItem Header="All Invoices">
+            <DataGrid x:Name="dgrdInvoices"/>
+        </TabItem>
+        <TabItem Header="All Items">
+            <DataGrid x:Name="dgrdItems"/>
+        </TabItem>
+        <TabItem Header="Add a new invoice">
+            <Grid Background="#FFE5E5E5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- row 0-->
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Enter the appropriate information and click the Add Invoice button" />
+                <!-- row 1-->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Name" />
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtName" Text="Ilia" />
+                <!-- row 2-->
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Address" />
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtAddress" Text="755 Morningside Ave." />
+                <!-- row 3-->
+                <Button Grid.Row="3" Grid.Column="0"  x:Name="btnAddInvoice"  Content="Add Invoice" Click="btnAddInvoice_Click" />
+                
+            </Grid>
+        </TabItem>
+        <TabItem Header="Add a new Item">
+            <Grid Background="#FFE5E5E5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- row 0-->
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Item Name" />
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtItemName" Text="Name" />
+                <!-- row 1-->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Quantity of Items" />
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtQuantity" Text="2" />
+                <!-- row 2-->
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Price of Item" />
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtPrice" Text="1.25" />
+                <!-- row 3-->
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Invoice to attach the item to" />
+                <ComboBox Grid.Row="3" Grid.Column="1"  x:Name="cboInvoice" />
+                <!-- row 4-->
+                <Button Grid.Row="4" Grid.Column="0"  x:Name="btnAddItem"  Content="Add Item" Click="btnAddItem_Click" />
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+</Window>
